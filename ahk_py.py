@@ -6,10 +6,9 @@ from PIL import Image, ImageDraw
 import threading
 import sys
 
-def send_ctrl_l():
-    # Send the CTRL + L keypress
-    pyautogui.hotkey('ctrl', 'l')
-    print("CTRL + L was pressed")
+def do_this_thing():
+    pyautogui.hotkey('ctrl', 'l') # Send the CTRL + L keypress
+    print("CTRL + L was pressed") # print message
 
 def on_quit(icon, item):
     icon.stop()
@@ -29,7 +28,7 @@ def create_image():
 def hotkey_listener():
     while True:
         keyboard.wait('F1')
-        send_ctrl_l()
+        do_this_thing()
 
 def setup_tray():
     # Create a system tray icon with a quit option
